@@ -56,3 +56,34 @@
 	padding-top:8px;
 	text-align: center;
 }
+/*日记详情 */
+.data_list .diary_title{
+	margin-top:20px;
+	text-align: center;
+}
+
+.data_list .diary_info{
+	text-align: center;
+}
+
+.data_list .diary_content{
+	margin-top:20px;
+}
+/*添加日志下拉选择 */
+.data_list .diary_type{
+	margin-top:10px;
+}
+
+.data_list .diary_title{
+	margin-top:20px;
+	text-align: center;
+}
+/*日记列表列表 */
+.data_list .data_list_title .diaryType_add{
+	float: right;
+	margin-right: 20px;
+}
+/*添加日记 */
+.data_list .diaryType_form{
+	margin-top:20px;
+}

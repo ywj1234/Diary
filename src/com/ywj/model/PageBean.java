@@ -26,7 +26,7 @@ public class PageBean {
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
-	
+	//ÆðÊ¼Ò³
 	public int getStart() {
 		return (page-1)*pageSize;
 	}

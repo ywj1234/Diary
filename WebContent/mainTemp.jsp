@@ -11,6 +11,7 @@
 <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/bootstrap/js/jQuery.js"></script>
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/js/ckeditor/ckeditor.js"></script>
 	
 	<style type="text/css">
 	  body {
@@ -40,10 +41,10 @@
           <a class="brand" href="#">杨文杰的日记本</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#"><i class="icon-home"></i>&nbsp;主页</a></li>
-              <li class="active"><a href="#"><i class="icon-pencil"></i>&nbsp;写日记</a></li>
-              <li class="active"><a href="#"><i class="icon-book"></i>&nbsp;日记分类管理</a></li>
-              <li class="active"><a href="#"><i class="icon-user"></i>&nbsp;个人中心</a></li>
+              <li class="active"><a href="main?all=true"><i class="icon-home"></i>&nbsp;主页</a></li>
+              <li class="active"><a href="diary?action=preSave"><i class="icon-pencil"></i>&nbsp;写日记</a></li>
+              <li class="active"><a href="diaryType?action=list"><i class="icon-book"></i>&nbsp;日记分类管理</a></li>
+              <li class="active"><a href="user?action=preSave"><i class="icon-user"></i>&nbsp;个人中心</a></li>
             </ul>
           </div>
           <form name="myForm" class="navbar-form pull-right" method="post" action="main?all=true">

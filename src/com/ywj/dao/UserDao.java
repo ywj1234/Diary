@@ -39,6 +39,23 @@ public class UserDao {
 		return resultUesr;
 	}
 	
+	
+	/**
+	 * 修改个人信息
+	 * @param con
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
+	public int userUpdate(Connection con,User user) throws Exception{
+		String sql = "update t_user set nickName=?,imageName=?,mood=? where userId=?";
+		PreparedStatement pStatement = con.prepareStatement(sql);
+		pStatement.setString(1, user.getNickName());
+		pStatement.setString(2, user.getImageName());
+		pStatement.setString(3, user.getMood()); 
+		pStatement.setInt(4, user.getUserId());
+		return pStatement.executeUpdate();
+	}
 	 
 	public static void main(String[] args) throws Exception {
 		UserDao dao = new UserDao();

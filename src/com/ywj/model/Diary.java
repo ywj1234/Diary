@@ -9,6 +9,26 @@ public class Diary {
 	private int typeId = -1;
 	private Date releaseDate;
 	private String releaseDatestr;
+	private String typeName;
+	
+	
+	
+	public Diary() {
+		super();
+	}
+	public Diary(String title, String content, int typeId) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.typeId = typeId;
+	}
+	public String getTypeName() {
+		return typeName;
+	}
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
 	private int diaryCount;
 	
 	
