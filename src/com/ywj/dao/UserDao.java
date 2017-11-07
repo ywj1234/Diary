@@ -6,17 +6,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import com.ywj.model.User;
-import com.ywj.util.DbUtiles;
 import com.ywj.util.MD5Util;
 
 public class UserDao {
 	ResourceBundle bundle = ResourceBundle.getBundle("jdbc");
 	
-	
+	/**
+	 * 返回用户信息
+	 * @param con
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
 	public User login(Connection con,User user) throws UnsupportedEncodingException{
-		
 		User resultUesr = null;
 		String sql = "select *from t_user where userName=? and password=?;";
 		try {
@@ -55,14 +58,5 @@ public class UserDao {
 		pStatement.setString(3, user.getMood()); 
 		pStatement.setInt(4, user.getUserId());
 		return pStatement.executeUpdate();
-	}
-	 
-	public static void main(String[] args) throws Exception {
-		UserDao dao = new UserDao();
-		Connection con = null;
-		con = DbUtiles.getConnection();
-		User user2 = dao.login(con, new User());
-		System.out.println(user2.getImageName());
-		DbUtiles.close(con);
 	}
 }

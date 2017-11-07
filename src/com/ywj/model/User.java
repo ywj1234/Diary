@@ -1,5 +1,11 @@
 package com.ywj.model;
 
+
+/**
+ * ”√ªß
+ * @author ywj
+ *
+ */
 public class User {
 	private int userId;
 	private String userName;

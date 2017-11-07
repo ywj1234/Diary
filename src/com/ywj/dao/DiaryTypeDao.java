@@ -3,13 +3,9 @@ package com.ywj.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.ywj.model.Diary;
 import com.ywj.model.DiaryType;
-import com.ywj.util.DbUtiles;
 
 public class DiaryTypeDao {
 	
@@ -28,6 +24,12 @@ public class DiaryTypeDao {
 		return diaryTypeDao;
 	}
 	
+	/**
+	 * 返回日记类别所有信息
+	 * @param con
+	 * @return
+	 * @throws Exception
+	 */
 	public List<DiaryType> diarytypeList(Connection con) throws Exception{
 		List<DiaryType> diaryTypeDao = new ArrayList<DiaryType>();
 		String sql = "SELECT *FROM t_diarytype";

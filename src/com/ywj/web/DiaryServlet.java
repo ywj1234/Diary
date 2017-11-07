@@ -21,7 +21,7 @@ public class DiaryServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	DiaryDao diaryDao=new DiaryDao();
+	private DiaryDao diaryDao=new DiaryDao();
 	ResourceBundle bundle = ResourceBundle.getBundle("jdbc");
 	DiaryTypeDao diaryTypeDao = new DiaryTypeDao();
 	

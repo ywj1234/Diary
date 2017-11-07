@@ -1,5 +1,11 @@
 package com.ywj.model;
 
+
+/**
+ * Ò³Êý
+ * @author ywj
+ *
+ */
 public class PageBean {
 
 	private int page; // µÚ¼¸Ò³

@@ -6,6 +6,11 @@ import java.security.NoSuchAlgorithmException;
 
 import sun.misc.BASE64Encoder;
 
+/**
+ * MD5√‹¬Îº”√‹
+ * @author ywj
+ * 
+ */
 public class MD5Util {
 	public static String EncoderPwdByMd5(String str)
 			throws UnsupportedEncodingException {

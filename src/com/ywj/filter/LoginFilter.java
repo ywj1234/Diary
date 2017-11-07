@@ -18,7 +18,10 @@ public class LoginFilter implements Filter{
 	public void destroy() {
 		
 	}
-
+	
+	/**
+	 * µÇÂ¼¹ýÂË
+	 */
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
 			FilterChain filterChain) throws IOException, ServletException {

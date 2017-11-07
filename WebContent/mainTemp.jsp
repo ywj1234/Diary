@@ -57,7 +57,7 @@
 
 <div class="container">
       	<div class="row-fluid">
-      		<div class="span9">
+      		<div class="span9" >
       			<jsp:include page="${mainPage }"></jsp:include>
       		</div>
       		<div class="span3">
@@ -69,8 +69,8 @@
       				<div class="user_image">
 						<img src="${resultUser.imageName }"/>
 					</div>
-      				<div class="nickName">${resultUser.nickName }</div>
-      				<div class="userSign">(${resultUser.mood })</div>
+      				<div class="nickName"><font color="#0088cc">${resultUser.nickName }</font></div>
+      				<div class="userSign"><font color="#0088cc">(${resultUser.mood })</font></div>
       			</div>
       			<div class="data_list">
       				<div class="data_list_title" >

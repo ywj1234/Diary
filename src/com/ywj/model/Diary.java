@@ -2,6 +2,12 @@ package com.ywj.model;
 
 import java.util.Date;
 
+
+/**
+ * »’º«¿‡
+ * @author ywj
+ *
+ */
 public class Diary {
 	private int diaryId;
 	private String title;

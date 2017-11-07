@@ -8,10 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.ywj.dao.DiaryDao;
 import com.ywj.dao.DiaryTypeDao;
-import com.ywj.model.Diary;
 import com.ywj.model.DiaryType;
 import com.ywj.util.DbUtiles;
 import com.ywj.util.StringUtil;

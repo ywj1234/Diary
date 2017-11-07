@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.ywj.model.Diary;
-import com.ywj.model.DiaryType;
 import com.ywj.model.PageBean;
 import com.ywj.util.DateUtil;
 import com.ywj.util.DbUtiles;
@@ -179,14 +177,5 @@ public class DiaryDao {
 		}else{
 			return false;
 		}
-	}
-	
-	public static void main(String[] args) throws Exception {
-		DiaryDao dao = new DiaryDao();
-		Connection con = null;
-		con = DbUtiles.getConnection();
-		int i = dao.driayDelete(con,"37");
-		System.out.println(i);
-		DbUtiles.close(con);
 	}
 }

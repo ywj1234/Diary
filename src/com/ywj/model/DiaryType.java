@@ -1,5 +1,11 @@
 package com.ywj.model;
 
+
+/**
+ * 日记类别
+ * @author ywj
+ *
+ */
 public class DiaryType {
 	private int diaryId;
 	private String typeName;

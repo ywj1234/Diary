@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 import com.ywj.dao.DiaryDao;
 import com.ywj.dao.DiaryTypeDao;
@@ -96,18 +97,18 @@ public class MainServlet extends HttpServlet {
 			page = "1";
 		}
 		Connection con = null;
-		PageBean pageBean = new PageBean(Integer.parseInt(page),
-				Integer.parseInt(bundle.getString("pageSize")));
+		PageBean pageBean = new PageBean(Integer.parseInt(page),Integer.parseInt(bundle.getString("pageSize")));
 		try {
 			con = DbUtiles.getConnection();
 			List<Diary> diaryList = diaryDao.diaryList(con, pageBean, diary);
 			int total = diaryDao.diaryCount(con, diary);
 			String pageCode = this.genPagation(total, Integer.parseInt(page),
 					Integer.parseInt(bundle.getString("pageSize")));
+			request.setAttribute("pageBean", pageBean);
+			request.setAttribute("total", total);
 			request.setAttribute("pageCode", pageCode);
 			request.setAttribute("diaryList", diaryList);
 			request.setAttribute("diaryData", diaryDao.dataCountList(con));
-
 			session.setAttribute("diaryTypeCountList",
 					diaryTypeDao.diarytypeCountList(con));
 			request.setAttribute("mainPage", "diary/diaryList.jsp");
@@ -139,8 +140,12 @@ public class MainServlet extends HttpServlet {
 		int totalPage = totalNum % pageSize == 0 ? totalNum / pageSize
 				: totalNum / pageSize + 1;
 		StringBuffer pageCode = new StringBuffer();
-		pageCode.append("<li><a href='main?page=1'>��ҳ</a></li>");
-		if (currentPage == 1) {
+		if (totalPage == 0 || totalPage == 1) {
+			pageCode.append("<li class='disabled'><a href='#'>��ҳ</a></li>");
+		}else {
+			pageCode.append("<li><a href='main?page=1'>��ҳ</a></li>");
+		}
+		if (currentPage == 1 || totalPage == 0) {
 			pageCode.append("<li class='disabled'><a href='#'>��һҳ</a></li>");
 		} else {
 			pageCode.append("<li><a href='main?page=" + (currentPage - 1)
@@ -158,13 +163,17 @@ public class MainServlet extends HttpServlet {
 						+ "</a></li>");
 			}
 		}
-		if (currentPage == totalPage) {
+		if (currentPage == totalPage || totalPage == 0) {
 			pageCode.append("<li class='disabled'><a href='#'>��һҳ</a></li>");
 		} else {
 			pageCode.append("<li><a href='main?page=" + (currentPage + 1)
 					+ "'>��һҳ</a></li>");
 		}
-		pageCode.append("<li><a href='main?page=" + totalPage + "'>βҳ</a></li>");
+		if (totalPage == 0 || totalPage == 1) {
+			pageCode.append("<li class='disabled'><a href='#'>βҳ</a></li>");
+		}else {
+			pageCode.append("<li><a href='main?page=" + totalPage + "'>βҳ</a></li>");
+		}
 		return pageCode.toString();
 	}
 }
